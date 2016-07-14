@@ -1,0 +1,131 @@
+Summary of what attribute an html element can have:
+
+First of all, from a language design point of view, there should be a minimum number of
+elements that can cover a maximum amount of webpage use case and involve acceptable level
+of comprimise between flexibility and generosity. The different elements we have encountered
+by far.
+Elements:
+   1. heads (different level of heads)
+   2. paragraphs (different level of paragraphs)
+   3. button
+   4. input
+   5. label
+   6. form
+   7. img
+
+HTML events are things that happen to html elements. I can be either something the user does
+or something the browser does.
+Events:
+   1. html web page finishes loading
+   2. input field change
+   3. mouse click
+   4. button click
+
+
+these diferent elements types tries to cover the content that needs to be rendered on webpages.
+So what attibutes they have from the point of view of rendering them?
+   1. id (for accessing)
+   2. value ( backend manapulation)
+   3. content (frontend rendering)
+   4. style ( color, font, width, length)
+   5. src ( if it's from another source, like a picuture, a text file)
+   6. href ()
+   7. event handler attributes. (event handlers for webpage operation (what happens for mouse click, etc, the actual event
+      handler operation would be implemented by javascipt)
+      onclick; onchange; onmouseover; onmouseout; onkeydown; onload
+      example:
+          <button id='start' onclick='getDate()'>Start</button>
+      <script>
+      function getDate() {
+          return '2015-10-30';
+      }
+      </script>
+     
+      it's the same as:
+   
+Window reserved words:
+        window:
+        document:
+
+        String, Number, Math, Date, 
+
+The complete set of content that make up a webpage ususally comes from a combination of html
+css, javascript:
+    html: defines the content of this webpage
+    css: defines the layout, style of this page
+    javascript: defines the dynamics of the page
+How are the integrated into one?
+    html files defines tags that insert the other two into it:
+        javascript: <script> </script> or an old version of it <script type="text/javascript">
+        css: <style> </style>
+
+    Javascript content can be placed both in the <head></head> section and the <body></body>section.
+    Multiple code pieces can be inserted, but it's better practice to always keep code together.
+
+    External scripts can be called too(it's better practice when the same piece of javascipt code
+    are used by multiple html pages)
+    <script src='myScript.js'></script>
+
+Javascript outputs to:
+    1. a separate alert window: window.alert()
+    2. the html document: document.write() (running this after a html document is fully loaded would
+       rewrite its whole content)
+    3. write to a specific html element: document.getElementById('demo').innerHTML = 
+    4. write to console
+
+Javascript 
+    syntax, statement, flow control, function definition, code block, is similar
+    data types: number, strings, arrays, objects(note different from dictionay), boolen (true, false) , empty underfined and null
+    Objects definition:
+        var person={firstname: 'Jone', lastname: 'Doe', age:50, fullname: function(){return this.firstname + this.lastname}}
+        person.firstname or person['firstname']
+        person.fullname() or person['fullname']()
+    function definition is very similar, but invoking a function is quite different.
+        1. invoked from Javascript code ( usual way of getting called from code routines)
+        2. when event occurs(such as a button click)
+
+    variable scope, interesting facts:
+        1. automatical global (assign value to non declared local variable makes it global)
+        2. local varialbe get deleted when function returns (as always), global variables get deleted when page get closed(hoooo~)
+        3. In html, the global scope is the window object, all global variables belong to the window object (what this is saying 
+           is that, when you try access a global variable in your script, you can do it in both ways, refer to it using its name
+           and also, refer to it as 'window'.<its name>. It should be the same. With that said, the word 'window' is a reserved
+           word in javascript for the current html session opened, the word 'this' in javascript is also a reserved word referring
+           to current object it is in.)
+        3. self invoked
+
+     Prototypes and objects:
+        These are the term equivalance of
+
+
+     good coding practice in javascript:
+         THis is interesting because it's a way for the user to understand how javascript works.
+         1. reduce html DOM size (each time getElementBy<> is called, it will search the whole DOM)
+         2. don't create a variable unless you need to save the values
+         3. access element and save it as a local variable before doing things with it. 
+
+     
+
+concepts in html:
+    1 Elements:
+        a. how its definition starts and ends: <tag> </tag>
+        b. what defines the actual content show on webpage: in between tags
+        c. how to assign extra attributes to this element: in the starting <tag>
+        d. what are the common and most used attributes for some elements:
+
+    2 Event handler attributes (something the user or the window does):
+        onclick, onchange, onmouseover, onmouseout, onkeydown, onload
+
+Concepts in Javascript:
+    1. document
+        a. To access and manipulate html elements' various attributes)
+        b. To directly access and manipulate the web page content
+    2. window (extra alert window)
+    3. console ( debug console)
+    4. number, string, boolean, array(list), object(not dict), undefined, null
+         a. there are two ways to access object attributes
+         b. use of key word 'new' to declare object instances
+    5. function calls or variable uses without specifiying their owner will be treated as their
+       owner being the global object which in a web page is the window. And in the function
+       definition, 'this' keyword refers to the global object. Otherwise, 'this' keyword refers
+       to the object that try to access this function/variable.
