@@ -43,9 +43,10 @@ write(myFunction().a); // would failed
  * When user specifiies an object/variable name, javascirpt would need a comprehensive logic
  * that could find the right thing the user want and also enforce a communication protocol (syntax)
  * of accepable complexity ( not too complicated ). So it starts by searching from the highest
- * level namespace scope that has been specified and goes down, if no namespace is not specified
- * explicitely, the current global object namespace will be used, which usually is the window object
- *
+ * level namespace scope that has been specified and goes up if still cannot find any,
+ * if no namespace is not specified
+ * explicitely, the current namespace will be used, which for the whole script is the window
+ * object, for a function definition, is the function itself.
  * What 'this' is referring to:
  *
  * How namespace is constructed, what is contained in a namespaces:
@@ -76,3 +77,15 @@ write(myFunction()); // Calling function myFunction with no specified namespace,
  * function block until it hit an explicit return statement or hit the end of the function
  * definition. Pay attention in this case of what mistakes would be made if 'this' is errorneously
  * used.*/
+
+
+//javascipt closures
+
+var add = (function() {
+    var count = 0;
+    return function() {return count += 1;};
+})(); // this self invoking function only runs once and return a function that has access to count.
+
+add();
+add();
+add();
