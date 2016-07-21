@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1> My Web Page </h1>
+<p id='pare'>The parent class </p>
+<p id='kid'>The kid class </p>
+
+<p id="demo"></p>
+
+<script src='inher.js'></script>
+<script>
+var pare = document.getElementById('pare');
+var kid = document.getElementById('kid');
+
+var a = new Dog('toby', 35);
+a.eat();
+a.sleep();
+a.bark();
+var b = new BigDog('dudu', 50);
+b.eat();
+b.sleep();
+b.bark();
+
+var c = new GoldenRetriever('diding', 70);
+c.collectBottles(20);
+c.sellBottles();
+
+</script>
+
+</body>
+</html>
