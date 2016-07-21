@@ -116,6 +116,18 @@ concepts in html:
     2 Event handler attributes (something the user or the window does):
         onclick, onchange, onmouseover, onmouseout, onkeydown, onload
 
+    3 Document object represents the web page. Accesing any element in the html page starts with
+      accessing the document object.
+      finding an element:
+      document.getElementById
+              .getElementByTag
+              .getElementByClass
+      operations for an element:
+      element.innerHTML =
+      element.attribute =
+      element.setAttribute(attribute, value)
+      element.onclick = function() {}
+
 Concepts in Javascript:
     1. document
         a. To access and manipulate html elements' various attributes)
@@ -129,3 +141,32 @@ Concepts in Javascript:
        owner being the global object which in a web page is the window. And in the function
        definition, 'this' keyword refers to the global object. Otherwise, 'this' keyword refers
        to the object that try to access this function/variable.
+
+    6 DOM nodes, DOM treat the entire thing as s tree of nodes, to keep the relationship
+      between elements and the attributes of elements attached to them. But common manipulation
+      of html elements shouldn't involve this level of details, there should be some upper level
+      apis for user to access and manipulate the same thing. But javascript keeps track
+      of this tree to help user find and locate these elements and their attributes.
+      except when you need to insert or remove elements, which have to be done from its parent
+
+    7 BOM(brower object model). There is a window object in javascript that is supported by almost
+      all modern browers.
+      --window(represents the browser)
+       |
+       |--document(represent the html file)
+       |
+       |--window properties(height, width)
+       |
+       |--window operations(open, close, moveto, resize)
+       |
+       |--screen(information for the visitor physical monitor, resolution, pixel, color, height)
+       |
+       |--location(the current address of this page)
+       |
+       |--history
+       |
+       |--navigator(information for the visitios'browser)
+       |
+       |--alert, confirm, prompt(boxes)
+       |
+       |--setTimeout, setInterval(Window allows code execution in time intervals.)
