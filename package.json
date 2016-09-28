@@ -1,0 +1,26 @@
+{
+  "name": "learn_web_page",
+  "version": "0.0.0",
+  "description": "A learn by example project",
+  "main": "main.js",
+  "dependencies": {
+    "express": "~4.14.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "mocha --all"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jowlyzhang/learn_web_page.git"
+  },
+  "keywords": [
+    "javascript",
+    "nodejs"
+  ],
+  "author": "tutu",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/jowlyzhang/learn_web_page/issues"
+  }
+}

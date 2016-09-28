@@ -1,0 +1,95 @@
+jquery is a client side scripting library.
+
+It contains a comprehensive pool of functions to manipulate all aspects of html elements.
+It offers simple and intuitive syntax to get elements, register event handlers, chaining
+functions.
+
+
+SELECTORS:
+=========
+    Jquery takes advantage of the CSS selectors to offer a variety of convenience functions
+    to select DOM element. There are three ways of element selection and any combination of
+    these three: 1. tag name, 2, element id, 3, css class
+
+    More powerful selection functions:
+    $().filter() <-------> $().not(): select elements that match /not match 'selector' or function
+    $().index() : find an element by its index
+    $().find(): find an element within another element
+    $().is(): check element matching/not matching criteria
+    $().map(): convert elements to another set of elements
+    $().slice(): select a subset of elements
+
+    Jquery is capable of traversing DOM very efficiently, so there are selecting methods based
+    on parent, child, sibling relations, properties.
+
+ATTRIBUTES:
+==========
+    After selecting an element, the next thing to do is usually manipulate the properties of
+    these elements. Jquery offers convenience functions to do these manipulation.
+    $().attr(attributeName) : fetching attribute values.
+    $().attr(attributeName, attributeValue) : setting attribute values.
+    related ones: $().removeAttr()
+    $().addClass() : apply defined style sheet to the element.
+    related ones: $().removeClass(), $().toggleClass(), $().hasClass()
+
+    Some frequently used attribute methods:
+    $().html(): the html element
+    $().val():  the input value of the input
+    $().text(): the text content of the element
+
+APPLY CSS PROPERTIES:
+====================
+    Applying css property to elements are very straight forward.
+    $().css(propertyName, propertyValue) or
+    $().css({property1: propertyValue1, property2: propertyValue2})
+
+    Similary, $().width(), $().height() can be used to set the width and height of an element
+
+MANIPULATE HTML ELEEMNT:
+=======================
+    $().replaceWith() , $().remove(), $().before(), $().after()
+
+EVENT HANDLING:
+==============
+    $().bind(eventType, eventHandler)
+    $().unbind(evnetType, eventHandler)
+    eventHandler is a callback function that optionally takes the event object that triggered
+    it. It is usually redundant to pass this event trigger.
+
+    There are a list of convinience functions for binding event handlers to events.
+
+
+AJAX:
+====
+    Let's start from the full name of this acronym, asynchronous javascript and xml. Asynchronous
+    means it can do something without a webpage refresh. It's mostly for data loading from the
+    server. So basically, this techinical can be used to fetch more data from server without
+    refresh the whole page. Let's say that upon visiting a server, a browser already loads down
+    the whole client script, including static content, images, html, xml, style sheets, dynamic
+    content, including javascript content that responds to user interaction such as mouse clicking
+    input information. But usually, not all information can be loaded to client side ahead of time
+    to satisfy all potential user needs, especially functions that are related to database usage.
+    If there is a HTTPRequest sent from browser to server, server would usually respond by sending
+    another page for the browser to render. If it is a HTTPRequest sent by ajax, it would respond
+    with only the data that is requested.
+
+    Jquery offers a rich set of AJAX methods:
+    $().load(url, [data], [callback])
+    url is the server side resource to which the request is sent. 'data' is data sent along request
+    to the server. callback is a function called upon receiving data from server.
+
+    $().loadJson(url, [dta], [callback])
+    this function loads and parse json data requested from server.
+
+VISUAL EFFECTS:
+==============
+    $().show(), $().hide(), $().fadeIn(), $().fadeOut(), $().toggle()
+
+
+UTILITY FUNCTIONS:
+=================
+    Jquery offers a list of utility function:
+    $.trim()
+    $.each(['dudu', 'baobao'], function(idx, val) {})
+    $.each({'apple': 1, 'pear': 3}, function(key, val) {})
+    

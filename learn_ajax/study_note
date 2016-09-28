@@ -1,0 +1,14 @@
+Ajax is a client side technique for doing asynchrnous communication with Web server.
+It allows event driven event handlers to be executed asynchrously after sending
+a request to the server not blocking other operations.
+
+It also dynamically update elements in the DOM, not requiring complete refress of
+the whole page, which offers better user experience.
+
+It is based on XMLHttpRequest that is able to send XML formated request over HTTP
+protocol. It is also capable of sending other type of formats.
+
+Database access using Ajax is very convenient. It certainly faces the same type
+of security issue as the other web technologies.
+
+It relies on javascript, css, and not necessarily supported by all browsers.

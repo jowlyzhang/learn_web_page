@@ -1,0 +1,131 @@
+typeof(Function); //function
+typeof(Object); //function
+typeof(Object.prototype); // object
+typeof({}); //object
+typeof([]); //object
+typeof(Math); // object
+typeof(String); //function
+typeof(Number); //function
+typeof(Date); //function
+
+
+Define a null object:
+=====================
+var a = {};
+var a = new Object();
+var a = Object();
+
+
+Define a string object:
+======================
+var a = new String();
+
+Define a number object:
+=======================
+var a = new Number();
+
+Define a boolean object:
+=======================
+var a = new Boolean();
+
+
+What the below code is doing is defining number, string, boolean constant
+, type conversion, not object definition.
+var a = '';
+var a = String();
+var a = 0;
+var a = Number();
+var a = true;
+var a = Boolean();
+
+
+Constructor VS non Constructor:
+===============================
+A constructor takes what is already an object: 'this'
+
+Do 'constructing'
+
+and implicitely return 'this'
+
+and the above mechanism has to be initiated by 'new'
+
+
+
+Concepts in javascript:
+
+1. Constructors:
+    Function, Object, String, Number, Boolean, 
+    constructors are functions that manufactures functions/objects (the basic two
+    data/method organizations in javascript. objects are containers, functions are
+    callable. In memory terms, objects point to data section, functions point to 
+    code section. objects can contain other objects and functions, functions can
+    contain functions and other objects in its namespace.
+
+    Both functions and objects are merely containers that organize code and data.
+
+    Objects are rather expressive and direct ways of organizing code and data. And
+    objects can serve as prototype to be created and linked to new objects: 
+
+    Adding new attributes to namespace of object is rather simple:
+    var a = {
+        age: 3,
+        name: function(){return 'dudu'}
+    }
+    The above mentioned mechanism is 'Object.create'
+
+    The syntax for adding attribute to function is a little bit more work:
+    function b() {
+        this.a = 4;
+        this.name = function () {return 'dudu'}
+    }
+
+    only when 'this' is explicitely mentioned, will this name be added to the namespace.
+    The advantages of objects over functions is not that functions are able to hold code snipets,
+    because objects can have attributes that do the same thing.
+    javascript offers a mechanism for functions to be copied and linked.
+
+    The above mentioned mechanism is the 'new' keyword that treats functions as a constructor, the
+    return value of which in turn would be an object.
+
+    functions have prototype and is "{}",  objects have no prototype.
+
+    what something like this:
+    function MyConstructor(a, b) {
+        this.a = a;
+        this.b = b;
+    }
+    is equavalent to:
+    function MyConstructor(a, b) {
+        //this = new Object();
+        this.a = a;
+        this.b = b;
+        // this.constructor = MyConstructor;
+        // return this
+    }
+
+    what something like this:
+    var a = {value:3,}
+    var b = Object.create(a)
+    is equavalent to:
+    var a = {value:3}
+    // var someobject = Object.create(null);
+    //someobject.constructor = a.constructor;
+    //someobject.__secret_link__ = a;
+    b = someobject
+
+2. Prototype
+
+3. Object
+
+Object.getOwnPropertyNames(d)
+[]
+
+Object.getOwnPropertyNames(Object.constructor)
+["length", "name", "arguments", "caller", "prototype"]
+
+Object.getOwnPropertyNames(Object)
+["length", "name", "arguments", "caller", "prototype", "assign", "create", "freeze", "getOwnPropertyDescriptor", "getOwnPropertyNames", "getOwnPropertySymbols", "is", "isExtensible", "isFrozen", "isSealed", "keys", "preventExtensions", "seal", "defineProperty", "defineProperties", "getPrototypeOf", "setPrototypeOf"]
+
+Object.getOwnPropertyNames(Object.prototype)
+["constructor", "toString", "toLocaleString", "valueOf", "hasOwnProperty", "isPrototypeOf", "propertyIsEnumerable", "__defineGetter__", "__lookupGetter__", "__defineSetter__", "__lookupSetter__", "__proto__"]
+

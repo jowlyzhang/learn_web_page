@@ -1,0 +1,44 @@
+<html>
+<body>
+    <script language="javascript" type="text/javascript">
+    // Create a XMLHttpRequest
+    function ajaxFunction() {
+        var ajaxRequest;
+
+        try {
+            // For Opera 8.0 +, Firefox, Safari
+            ajaxRequest = new XMLHttpRequest();
+        } catch(e) {
+            // For IE
+            try {
+                ajaxRequest = new ActiveXObject("Msxml2.XMLHTTP");
+            } catch(e) {
+                try{
+                    ajaxRequest = new ActiveXObject("Microsoft.XMLHTTP");
+                } catch(e) {
+                    alert("Your browser is broken");
+                    return false;
+                }
+            }
+        }
+    }
+
+    // Configure an XMLHttpRequest
+    function validateUserId() {
+        ajaxFunction();
+        // Add a callback function
+        ajaxRequest.onreadystatechange = processRequest;
+        if (!target) target = document.getElementById("userid");
+        var url = "validate?id=" + escape(target.value);
+
+        // Makeing asynchronous request to the web server.
+        ajaxRequest.open('GET', url, true);
+        ajaxRequest.send(null);
+    }
+    </script>
+    <form name='myForm'>
+        Name: <input type='text' name='username' /> <br />
+        Time: <input type='text' name='time' />
+    </form>
+</body>
+</html>

@@ -1,0 +1,20 @@
+I was learning this content a long time ago and all this directory contains is example
+code I typed before. Coming back today, these materials is only making vague sense to
+me. It's hard to rememeber all the details but having a general idea of all the concepts
+might be a necessary take away for all the learning. So I would keep some study notes
+everytime I tried it out.
+
+I would say Node.js is a library that makes server side programming with javascript much
+easier. And it looks like it's more than a library, because except the functionality
+if offers for asynchrous resource accessing, event-driven handling, easy scalabilty.
+Node.js also offers package management that reuse other packages, host on the npm website,
+installing packages globally, locally. It also has an interactive interpreter that makes
+prototyping and tring out pieces of code easier which uses the google V8 javascript engine.
+
+
+Node.js makes it especially easy to implement concurrency in server applications, which is
+rare for  many server side programming languages. Nodejs is mostly used to build network
+programs, like PHP, but, PHP is blocking, and nodejs is non blocking.
+
+
+The express thing is a web framework for fast development with nodejs.

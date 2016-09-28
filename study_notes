@@ -129,6 +129,7 @@ concepts in html:
       element.onclick = function() {}
 
 Concepts in Javascript:
+They are all objects
     1. document
         a. To access and manipulate html elements' various attributes)
         b. To directly access and manipulate the web page content

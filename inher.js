@@ -10,6 +10,7 @@ Function.prototype.updatePrototype = function (d) {
     }
     return this;
 }
+
 Function.prototype.inherits = function (parent) {
     var copyOfParent = new parent();
     copyOfParent.constructor = this;

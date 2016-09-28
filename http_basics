@@ -1,0 +1,50 @@
+A basic http request consists of:
+    A verb (or method)
+        Has a meaning
+        Is idempotent or not
+        Is safe or not
+        Is cachable or not
+    A resource (or endpoint)
+
+Understanding the common HTTP verbs:
+
+GET: As the name suggests, read from a resource
+     Retrieve a specific resource from the server, or a list of resources
+
+POST: Creates a resource or trigger a data handling process
+      Create a new resource on the Server
+
+PUT: Fully updates/replaces an existing resource or create a resource
+     Update a Resource on ther Server, providing the entire resource
+
+PATCH: Partially updates a resource
+       Update a resource on the Server, providing only changed attributes.
+
+DELETE: Delete a resource
+        Remove a Resource from Server
+
+
+RPC (remote call procedure):
+    Endpoint contains the name of operations you want to invoke
+    Generally only uses GET and POST HTTP verbs
+
+GET /someoperation?data=anId
+
+POST /anotheroperation
+{
+    'data': 'anId',
+    'anotherdata': 'another value'
+}
+
+
+REST
+    Expose data as resource.
+
+Get /someresource/anId
+
+PUT /someresource/anId
+{
+    "anotherdata": 'another value'
+}
+
+REST approach is data based, RPC approach is operation based.

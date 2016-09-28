@@ -1,0 +1,11 @@
+There are some graphic representation of this class based vs prototype based
+inheritance thing.
+
+As we can see from this experiment, prototype based oop has the power
+to achieve the same purpose as class-inheritance based oop. As a matter
+of fact, the whole class-based implementation in javascript is based on
+the prototype mechanism + `new` + constructor function.
+
+Dynamically adding functions to a prototype adds functionality to all
+objects created using that constructor. However, prototype based
+implementation is more intuitive.
