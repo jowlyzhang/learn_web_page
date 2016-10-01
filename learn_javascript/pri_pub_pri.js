@@ -1,4 +1,6 @@
-/*This is about the private, public, priviledged functions in javascript*/
+/* This is about the private, public, priviledged functions in javascript
+ *
+ * */
 Function.prototype.updatePrototype = function (d) {
    for (name in d) {
        this.prototype[name] = d[name];
@@ -7,14 +9,22 @@ Function.prototype.updatePrototype = function (d) {
 }
 
 var Dog = (function () {
+        // Defined a variable outside the scope of constructor function
+        // to count the number of instances initiated for this constructor.
     var dogCount = 0;
     function Dog(name) {
         console.log('Hello '+ name + ', welcome to the world');
+        // Variables defined in the namespace of `this` will be in the namespace of
+        // each individual objects. Either it's in constructor or other instance methods.
         this.weight = 10;
         this.name = name;
         this.age = 0;
         this.offspring = [];
         dogCount += 1;
+        // It's a convention to assign `this` to `that` for using in private functions.
+        // Private functions needs to be defined when constructor function is defined so
+        // that the outer scope for private function is there and the great power of closure
+        // can be used.
         var that = this;
         // Private method
         function _eat() {
@@ -34,8 +44,16 @@ var Dog = (function () {
         this.eat = function () {
             console.log(this.name + ' eat ' + _eat());
         }
+        this.poop = function () {
+            if (that.age < 1) {
+                console.log(this. 'Not potty trained puppy';
+            } else {
+                return 'Big boy/girl poop';
+            }
+        }
     }
-    // Static method
+    // Static method, cannot be called by individual objects of this constructor.
+    // Only callable as constructor member method.
     Dog.count = function () {
         return dogCount;
     }
@@ -66,8 +84,10 @@ var Dog = (function () {
 var dudu = new Dog('dudu');
 dudu.growUp(4);
 dudu.eat();
+dudu.poop();
 var dada = dudu.haveBaby('dada');
 dada.eat();
+dada.poop();
 var didi = dudu.haveBaby('didi');
 didi.eat();
 var dangdang = dudu.haveBaby('dangdang');

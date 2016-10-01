@@ -1,0 +1,36 @@
+Layered networking model:
+=========================
+
+Physical layer: electrical signals, light pulses, radio waves
+Protocol: Not really protocols, standards for voltage, frequencies, other physical properties.
+
+Link layer: ethernet, 802.11a/b/gn token ring
+Protocol: Handle concurrent accesses to the physical medium, direct traffic.
+
+Network layer: Internet Protocol(IP)
+Protocol: Handler traffic half way through the world
+
+Transport layer: TCP, UDP
+Protocol: Pass on your message to the right process
+
+Application layter: HTTP, SMTP, IMAP, POP3, telnet, ssh
+Protocol: How to interpret message.
+
+A browser refresh click on a user computer gets converted to
+-> a http request, which gets converted to
+-> a data package in with tcp protocol, which get sent to a web server via
+-> ip protocol, which is physically trasferred and routed by
+-> ethernet and physical layer,
+after reaching the web server
+-> tcp protocol pass it to the process by the port number
+-> http protocol unwraps request from data packet.
+
+
+HTTP sessions:
+==============
+
+Http session is a sequence of network request-response transactions. An http client initiates
+request by establishing a transmission control protocol(TCP) connection to a particular port
+on a server(typicially port 80, occasionally port 8080). An http server listening on that port
+waits for a client's request message. Upon receiving the request, the server sends back a status
+line and a message of its own. The body of this message is typically the requested resource.

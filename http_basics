@@ -24,7 +24,7 @@ DELETE: Delete a resource
         Remove a Resource from Server
 
 
-RPC (remote call procedure):
+RPC (remote procedure call):
     Endpoint contains the name of operations you want to invoke
     Generally only uses GET and POST HTTP verbs
 
